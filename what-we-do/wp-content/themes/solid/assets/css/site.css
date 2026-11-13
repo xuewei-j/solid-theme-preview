@@ -1,0 +1,101 @@
+/*
+ * Site header and footer details that theme.json can't express. Token variables only.
+ * "body" raises specificity above core's navigation and social-link styles, whatever order they load in.
+ */
+
+/* Header navigation */
+body .solid-site-header .wp-block-navigation {
+	font-weight: var(--wp--custom--font--weight--semibold);
+}
+
+body .solid-site-header .wp-block-navigation-item__content {
+	padding: 0.625rem 0.875rem;
+	border-radius: var(--wp--custom--radius--sm);
+	text-decoration: none;
+}
+
+/* Hover sits on the list item so it covers both the link and its chevron. */
+body .solid-site-header .wp-block-navigation__container > .wp-block-navigation-item {
+	border-radius: var(--wp--custom--radius--sm);
+}
+
+body .solid-site-header .wp-block-navigation__container > .wp-block-navigation-item:hover {
+	background-color: var(--wp--preset--color--mist-50);
+}
+
+/* The chevron sits next to the link rather than inside it. */
+body .solid-site-header .wp-block-navigation__container > .has-child {
+	padding-right: 0.625rem;
+}
+
+body .solid-site-header .wp-block-navigation__container > .has-child > .wp-block-navigation-item__content {
+	padding-right: 0;
+}
+
+/* Join Our Team stands out, as in the design. */
+body .solid-site-header .wp-block-navigation__container > .is-emphasis {
+	background-color: var(--wp--preset--color--mist-50);
+}
+
+/* Dropdown */
+body .solid-site-header .wp-block-navigation__submenu-container {
+	min-width: 15.5rem !important;
+	padding: var(--wp--preset--spacing--20);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: var(--wp--custom--radius--md);
+	background-color: var(--wp--preset--color--white);
+	box-shadow: var(--wp--preset--shadow--menu);
+}
+
+body .solid-site-header .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+body .solid-site-header .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover {
+	background-color: var(--wp--preset--color--mist-50);
+	color: var(--wp--preset--color--teal-900);
+}
+
+/* Phone menu: reads from the left, and the dropdown's card look is for desktop only. */
+body .solid-site-header .wp-block-navigation__responsive-container.is-menu-open,
+body .solid-site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+	--navigation-layout-justification-setting: flex-start;
+}
+
+body .solid-site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container {
+	min-width: 0 !important;
+	padding: 0 0 0 var(--wp--preset--spacing--30);
+	border: 0;
+	box-shadow: none;
+}
+
+/* The capabilities panel gives its padding back to the rows on phones. */
+@media (max-width: 781px) {
+	.wp-block-group.is-style-panel {
+		padding: var(--wp--preset--spacing--30);
+	}
+}
+
+/* Footer */
+.solid-site-footer a {
+	text-decoration: none;
+}
+
+.solid-site-footer a:hover {
+	text-decoration: underline;
+}
+
+.solid-site-footer :focus-visible {
+	outline: 2px solid var(--wp--preset--color--yellow-400);
+	outline-offset: 2px;
+}
+
+body .solid-site-footer .wp-block-social-links .wp-social-link {
+	border: 1px solid rgb(255 255 255 / 0.35);
+	border-radius: var(--wp--custom--radius--pill);
+}
+
+body .solid-site-footer .wp-block-social-links .wp-social-link a {
+	padding: 0.5625rem;
+}
