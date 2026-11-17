@@ -1,0 +1,63 @@
+/*
+ * Keeps pages built under the old Neve theme readable, and moves their palette colors to the new palette.
+ *
+ * Older pages chose many colors by NAME from Neve's palette ("Site Background", "Dark Background"…). WordPress saves
+ * that as a class such as has-nv-site-bg-color. Neve supplied the CSS for those classes; without it, white headings on
+ * dark banners turn dark and banner overlays vanish. This file supplies them again, pointed at the new palette.
+ *
+ * It does NOT touch colors that were typed in as custom values (for example #054a65): those are saved inside each
+ * block and change only when the block or the page is edited.
+ *
+ * Delete this file (and its two lines in functions.php) once no page uses a has-nv-* or has-neve-* class.
+ */
+
+:root {
+	--wp--preset--color--nv-site-bg: var(--wp--preset--color--white);
+	--wp--preset--color--nv-text-dark-bg: var(--wp--preset--color--white);
+	--wp--preset--color--nv-light-bg: var(--wp--preset--color--mist-50);
+	--wp--preset--color--nv-dark-bg: var(--wp--preset--color--teal-900);
+	--wp--preset--color--nv-text-color: var(--wp--preset--color--ink);
+	--wp--preset--color--neve-text-color: var(--wp--preset--color--ink);
+	--wp--preset--color--neve-link-color: var(--wp--preset--color--teal-900);
+	--wp--preset--color--neve-link-hover-color: var(--wp--preset--color--teal-600);
+	--wp--preset--color--nv-primary-accent: var(--wp--preset--color--teal-600);
+	--wp--preset--color--nv-secondary-accent: var(--wp--preset--color--teal-900);
+	--wp--preset--color--nv-c-1: var(--wp--preset--color--sage-500);
+	--wp--preset--color--nv-c-2: var(--wp--preset--color--yellow-400);
+}
+
+/* Text colors. !important matches how WordPress writes palette classes, so block-level settings still win as before. */
+.has-nv-site-bg-color { color: var(--wp--preset--color--nv-site-bg) !important; }
+.has-nv-text-dark-bg-color { color: var(--wp--preset--color--nv-text-dark-bg) !important; }
+.has-nv-light-bg-color { color: var(--wp--preset--color--nv-light-bg) !important; }
+.has-nv-dark-bg-color { color: var(--wp--preset--color--nv-dark-bg) !important; }
+.has-nv-text-color-color { color: var(--wp--preset--color--nv-text-color) !important; }
+.has-neve-text-color-color { color: var(--wp--preset--color--neve-text-color) !important; }
+.has-neve-link-color-color { color: var(--wp--preset--color--neve-link-color) !important; }
+.has-neve-link-hover-color-color { color: var(--wp--preset--color--neve-link-hover-color) !important; }
+.has-nv-primary-accent-color { color: var(--wp--preset--color--nv-primary-accent) !important; }
+.has-nv-secondary-accent-color { color: var(--wp--preset--color--nv-secondary-accent) !important; }
+.has-nv-c-1-color { color: var(--wp--preset--color--nv-c-1) !important; }
+.has-nv-c-2-color { color: var(--wp--preset--color--nv-c-2) !important; }
+
+/* Background colors (also used for Cover block overlays). */
+.has-nv-site-bg-background-color { background-color: var(--wp--preset--color--nv-site-bg) !important; }
+.has-nv-text-dark-bg-background-color { background-color: var(--wp--preset--color--nv-text-dark-bg) !important; }
+.has-nv-light-bg-background-color { background-color: var(--wp--preset--color--nv-light-bg) !important; }
+.has-nv-dark-bg-background-color { background-color: var(--wp--preset--color--nv-dark-bg) !important; }
+.has-nv-text-color-background-color { background-color: var(--wp--preset--color--nv-text-color) !important; }
+.has-neve-text-color-background-color { background-color: var(--wp--preset--color--neve-text-color) !important; }
+.has-neve-link-color-background-color { background-color: var(--wp--preset--color--neve-link-color) !important; }
+.has-neve-link-hover-color-background-color { background-color: var(--wp--preset--color--neve-link-hover-color) !important; }
+.has-nv-primary-accent-background-color { background-color: var(--wp--preset--color--nv-primary-accent) !important; }
+.has-nv-secondary-accent-background-color { background-color: var(--wp--preset--color--nv-secondary-accent) !important; }
+.has-nv-c-1-background-color { background-color: var(--wp--preset--color--nv-c-1) !important; }
+.has-nv-c-2-background-color { background-color: var(--wp--preset--color--nv-c-2) !important; }
+
+/* Border colors. */
+.has-nv-site-bg-border-color { border-color: var(--wp--preset--color--nv-site-bg) !important; }
+.has-nv-light-bg-border-color { border-color: var(--wp--preset--color--nv-light-bg) !important; }
+.has-nv-dark-bg-border-color { border-color: var(--wp--preset--color--nv-dark-bg) !important; }
+.has-neve-text-color-border-color { border-color: var(--wp--preset--color--neve-text-color) !important; }
+.has-neve-link-color-border-color { border-color: var(--wp--preset--color--neve-link-color) !important; }
+.has-neve-link-hover-color-border-color { border-color: var(--wp--preset--color--neve-link-hover-color) !important; }
